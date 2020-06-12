@@ -1,0 +1,16 @@
+<?php
+function autoload1($className) {
+	$fileName = "model/".$className.'.php';
+	include $fileName;
+}
+function autoload2($className) {
+	$fileName = "controller/".$className.'.php';
+	include $fileName;
+}
+function autoload3($className) {
+	$fileName = $className.'.php';
+	include $fileName;
+}
+spl_autoload_register ( "autoload1" );
+spl_autoload_register ( "autoload2" );
+spl_autoload_register ( "autoload3" );
